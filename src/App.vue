@@ -13,7 +13,7 @@
 	};
 </script>
 <style lang="scss">
-	@import "../public/bootstrap-reboot.css";
+	@import "../public/styles/bootstrap-reboot.css";
 	@font-face {
 		font-family: 'MullerLight';
 		src: url("../public/fonts/MullerLight.otf");
@@ -29,7 +29,7 @@
 		display: flex;
 		justify-content: flex-start;
 		flex-direction: column;
-		font-family: "MullerLight";
+		font-family: "MullerLight", serif;
 	}
 	@media (min-width: 541px) {
 		main {
