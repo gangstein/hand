@@ -1,30 +1,41 @@
 <template>
-	<div id="app">
-		<comp/>
-	</div>
+	<main id="app">
+		<mymap/>
+		<right-menu/>
+	</main>
 </template>
 <script>
-	import Comp from "./components/comp";
+	import mymap     from "./components/mymap";
+	import RightMenu from "./components/right-menu";
+
 	export default {
-		components: { Comp }
+		components: { RightMenu, mymap }
 	};
 </script>
 <style lang="scss">
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
+	@import "../public/bootstrap-reboot.css";
+	@font-face {
+		font-family: 'MullerLight';
+		src: url("../public/fonts/MullerLight.otf");
+	}@font-face {
+		font-family: 'MullerMedium';
+		src: url("../public/fonts/MullerMedium.otf");
 	}
-	#nav {
-		padding: 30px;
-		a {
-			font-weight: bold;
-			color: #2c3e50;
-			&.router-link-exact-active {
-				color: #42b983;
-			}
+	main {
+		width: 100%;
+		min-width: 320px;
+		max-width: 1920px;
+		height: 100vh;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		font-family: "MullerLight";
+	}
+	@media (min-width: 541px) {
+		main {
+			flex-direction: row;
+			justify-content: space-between;
 		}
+		
 	}
 </style>

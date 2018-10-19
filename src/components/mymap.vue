@@ -1,10 +1,10 @@
 <template>
-	<div id="map" style="width: 100%; min-height: 100vh">
-	</div>
+	<aside id="map">
+	</aside>
 </template>
 <script>
 	export default {
-		name:    "comp",
+		name:    "mymap",
 		data() {
 			return {
 				myMap: {}
@@ -25,14 +25,27 @@
 				this.myMap.behaviors.disable(["drag", "rightMouseButtonMagnifier", "scrollZoom"]);
 				const myPlacemark = new ymaps.Placemark([51.661535, 39.200287], {}, {
 					iconLayout:      "default#image",
-					iconImageHref:   "group-2.svg",
-					iconImageSize:   [30, 42],
-					iconImageOffset: [-3, -42]
+					iconImageHref:   "img/map-shape2.svg",
+					iconImageSize:   [133, 61],
+					iconImageOffset: [-68, -61]
 				});
+				this.myMap.panes.get('ground').getElement().parentNode.style.backgroundColor = '#1e1e1e';
+				this.myMap.panes.get('ground').getElement().style.filter = 'grayscale(100%) opacity(18%)';
+				// this.myMap.panes.get('ground').getElement().style.filter = 'opacity(18%)';
 				this.myMap.geoObjects.add(myPlacemark);
 			}
 		}
 	};
 </script>
-<style scoped>
+<style scoped lang="scss">
+	#map {
+		width: 99.9%;
+		height: 99.9vh;
+		background-image: linear-gradient(to bottom, #4a4a4a, #4a4a4a);
+	}
+	@media (max-width: 540px) {
+		#map {
+			height: 60%;
+		}
+	}
 </style>
