@@ -6,12 +6,71 @@
 			<li>Формы</li>
 			<li>Издателям</li>
 			<li>Платформа</li>
+			<li @click="getData">Второе задание</li>
 		</ul>
 	</nav>
 </template>
 <script>
+	import axios                        from "axios";
+	import { mapGetters, mapMutations } from "vuex";
+
 	export default {
-		name: "navigation"
+		name:     "navigation",
+		data() {
+			return {
+				stations: []
+			};
+		},
+		computed: {
+			...mapGetters([
+				"getArrayPlacemark",
+				"getMap"])
+		},
+		methods:  {
+			...mapMutations([
+				"setStations",
+				"setCoords",
+				"setPopup",
+				"setServerDataStations"]),
+			getData() {
+				this.setPopup(true);
+				this.setStations([]);
+				this.getArrayPlacemark.forEach(el => {
+					this.getMap.geoObjects.remove(el);
+				});
+
+				axios.get("./scripts/stations.js")
+				  .then(r => {
+					  this.setServerDataStations(JSON.parse(r.data.split(" = ")[1]));
+					  let stations = JSON.parse(r.data.split(" = ")[1]);
+					  let centre   = [0, 0];
+
+					  stations.forEach(st => {
+						  centre[0] += parseFloat(st.lat);
+						  centre[1] += parseFloat(st.lng);
+
+						  const placemark = new ymaps.Placemark
+						  ([parseFloat(st.lat), parseFloat(st.lng)], {}, {
+							  iconLayout:      "default#image",
+							  iconImageHref:   "img/group-2.svg",
+							  iconImageSize:   [28, 35],
+							  iconImageOffset: [-14, -35]
+						  });
+
+						  this.stations.push(placemark);
+						  this.getMap.geoObjects.add(placemark);
+					  });
+
+					  centre[0] = centre[0] / stations.length;
+					  centre[1] = centre[1] / stations.length;
+					  this.setCoords(`${centre[0]}, ${centre[1]}, 11`);
+					  this.setStations(this.stations);
+				  })
+				  .catch(e => {
+					  console.log(e);
+				  });
+			}
+		}
 	};
 </script>
 <style scoped lang="scss">

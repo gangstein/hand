@@ -1,15 +1,23 @@
 <template>
 	<main id="app">
 		<mymap/>
-		<right-menu/>
+		<transition name="popup" mode="out-in">
+		<right-menu v-if="!getPopup"/>
+		<popup-menu v-if="getPopup"/>
+		</transition>
 	</main>
 </template>
 <script>
-	import mymap     from "./components/mymap";
-	import RightMenu from "./components/right-menu";
+	import mymap          from "./components/mymap";
+	import RightMenu      from "./components/right-menu";
+	import PopupMenu      from "./components/popupMenu";
+	import { mapGetters } from "vuex";
 
 	export default {
-		components: { RightMenu, mymap }
+		components: { PopupMenu, RightMenu, mymap },
+		computed:   {
+			...mapGetters(["getPopup"])
+		}
 	};
 </script>
 <style lang="scss">
@@ -17,7 +25,8 @@
 	@font-face {
 		font-family: 'MullerLight';
 		src: url("../public/fonts/MullerLight.otf");
-	}@font-face {
+	}
+	@font-face {
 		font-family: 'MullerMedium';
 		src: url("../public/fonts/MullerMedium.otf");
 	}
@@ -37,5 +46,15 @@
 			justify-content: space-between;
 		}
 		
+	}
+	
+	.popup-enter-active, .popup-leave-active {
+		transition: opacity .3s;
+	}
+	.popup-enter {
+		opacity: 0;
+	}
+	.popup-leave-to {
+		opacity: 0;
 	}
 </style>

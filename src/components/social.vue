@@ -14,6 +14,7 @@
 <style scoped lang="scss">
 	.social {
 		margin: 0 0 19px 50px;
+		width: 200px;
 		img {
 			width: 20px;
 			height: 14px;
