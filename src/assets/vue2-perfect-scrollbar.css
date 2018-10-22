@@ -47,7 +47,7 @@
   opacity: 0.6;
 }
 
-.ps:hover > .ps__rail-y {
+.ps:hover > .ps__rail-x {
 	display: none;
 }
 .ps .ps__rail-x:hover,
