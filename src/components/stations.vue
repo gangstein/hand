@@ -13,7 +13,7 @@
 <script>
 	import { mapGetters }       from "vuex";
 	import { PerfectScrollbar } from "vue2-perfect-scrollbar";
-	import "../../public/styles/vue2-perfect-scrollbar.css";
+	import "../assets/vue2-perfect-scrollbar.css";
 
 	export default {
 		name:       "stations",
