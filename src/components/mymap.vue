@@ -1,6 +1,6 @@
 <template>
-	<aside id="map">
-	</aside>
+	<section id="map">
+	</section>
 </template>
 <script>
 	import { mapGetters, mapMutations } from "vuex";

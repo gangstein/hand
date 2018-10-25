@@ -1,12 +1,12 @@
 <template>
-	<div class="right-menu">
+	<section class="right-menu">
 		<navigation/>
-		<div class="container">
+		<figure>
 			<regions/>
 			<advertising/>
 			<social/>
-		</div>
-	</div>
+		</figure>
+	</section>
 </template>
 <script>
 	import Navigation  from "./navigation";
@@ -28,6 +28,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		figure {
+			margin-bottom: 0;
+		}
 	}
 	@media (max-width: 540px) {
 		.right-menu {

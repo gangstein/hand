@@ -1,5 +1,5 @@
 <template>
-	<div class="popup-menu">
+	<section class="popup-menu">
 		<header>
 			<img src="../../public/img/group-19.svg" alt="">
 			<div class="shadow"></div>
@@ -9,8 +9,7 @@
 			</button>
 		</header>
 		<stations/>
-		<!--<social/>-->
-	</div>
+	</section>
 </template>
 <script>
 	import Advertising                  from "./advertising";

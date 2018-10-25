@@ -1,5 +1,5 @@
 <template>
-	<div class="advertising">
+	<figure class="advertising">
 		<div>
 			<p>Размещение рекламы:</p>
 			<p>+7 945 249-48-91</p>
@@ -11,7 +11,7 @@
 			<p>SSP HPMD Ads:</p>
 			<a href="#">media@hpmdnetwork.ru</a>
 		</div>
-	</div>
+	</figure>
 </template>
 <script>
 	export default {
@@ -23,13 +23,13 @@
 		margin-top: 36px;
 		display: flex;
 		flex-direction: column;
-		font-family: 'MullerMedium';
+		font-family: 'MullerMedium', serif;
 		line-height: 12px;
 		font-size: 8px;
 		margin-left: 50px;
 		
 		div {
-			margin: 0 0 10px 0 ;
+			margin: 0 0 10px 0;
 			p {
 				margin: 0;
 			}

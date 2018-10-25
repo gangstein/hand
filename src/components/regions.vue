@@ -1,5 +1,5 @@
 <template>
-	<div class="regions">
+	<nav class="regions">
 		<div @click="click"
 		     data-region="MSK"
 		     data-coords="55.743825, 37.607576"
@@ -30,7 +30,7 @@
 			<p>+ 7 (812) 240-43-35</p>
 			<p>196158, наб. Обводного канала 199,<br/>«Обводный двор», офис 3 «А»</p>
 		</div>
-	</div>
+	</nav>
 </template>
 <script>
 	import {mapMutations} from 'vuex'
