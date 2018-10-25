@@ -3,11 +3,11 @@
 		<header>
 			<img src="../../public/img/group-19.svg" alt="">
 			<div class="shadow"></div>
+			<button class="back" @click="hiddenPopup">
+				<span class="one"></span>
+				<span class="two"></span>
+			</button>
 		</header>
-		<button class="back" @click="hiddenPopup">
-			<span class="one"></span>
-			<span class="two"></span>
-		</button>
 		<stations/>
 		<!--<social/>-->
 	</div>
@@ -82,7 +82,7 @@
 			height: 13px;
 			position: absolute;
 			top: 18px;
-			left: 9px;
+			left: 17px;
 			text-align: left;
 			background-color: transparent;
 			border: none;
