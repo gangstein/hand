@@ -30,10 +30,16 @@
 		font-family: 'MullerMedium';
 		src: url("../public/fonts/MullerMedium.otf");
 	}
-	main {
-		width: 100%;
+	body {
 		min-width: 320px;
 		max-width: 1920px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	main {
+		width: 100%;
 		height: 100vh;
 		display: flex;
 		justify-content: flex-start;

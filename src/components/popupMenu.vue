@@ -1,12 +1,15 @@
 <template>
 	<div class="popup-menu">
-		<img src="../../public/img/group-19.svg" alt="">
+		<header>
+			<img src="../../public/img/group-19.svg" alt="">
+			<div class="shadow"></div>
+		</header>
 		<button class="back" @click="hiddenPopup">
 			<span class="one"></span>
 			<span class="two"></span>
 		</button>
 		<stations/>
-		<social/>
+		<!--<social/>-->
 	</div>
 </template>
 <script>
@@ -60,10 +63,19 @@
 		flex-direction: column;
 		justify-content: space-between;
 		position: relative;
-		img {
-			width: 93px;
-			margin: 18px 0 18px 49px;
+		header {
+			
+			.shadow {
+				width: 100%;
+				height: 3px;
+				box-shadow: 0 1px 5.5px rgba(0, 0, 0, 0.1);
+			}
+			img {
+				width: 93px;
+				margin: 18px 0 18px 49px;
+			}
 		}
+		
 		button {
 			outline: none;
 			width: 13px;
